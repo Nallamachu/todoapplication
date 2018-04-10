@@ -1,0 +1,37 @@
+ToDo Application Prerequisites:
+===================================
+Technologies: 
+	Angular 5, 
+	HTML5,
+	JavaScript,
+	CSS,
+	SpringBoot, 
+	IBM Informix DB, 
+	Hibernate 5
+	
+
+Database Queries:
+===================
+set autocommit=1;
+create database localdatabase in dbs0 with log;
+commit;
+
+CREATE TABLE todo_items(
+	id SERIAL PRIMARY KEY, 
+	name VARCHAR(50) not null,
+	description varchar(200), 
+	todo_date date, 
+	status varchar(20) not null
+);
+
+
+DB Connection Details:
+=======================
+URL: jdbc:informix-sqli://localhost:9998/localdatabase:INFORMIXSERVER=nallamachu
+UN: informix
+PW: Password1234
+
+
+Server Port:
+=======================
+server.port=8181
