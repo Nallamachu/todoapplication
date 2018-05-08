@@ -1,10 +1,9 @@
 ToDo Application Prerequisites:
 ===================================
 Technologies: 
-	Angular 5, 
+	Angular JS, 
 	HTML5,
-	JavaScript,
-	CSS,
+	Bootstrap,
 	SpringBoot, 
 	IBM Informix DB, 
 	Hibernate 5
