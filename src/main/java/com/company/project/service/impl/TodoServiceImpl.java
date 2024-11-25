@@ -29,7 +29,7 @@ public class TodoServiceImpl implements TodoService {
 
 	@Override
 	public boolean isItemExists(Items item) {
-		return (item != null) ? repository.exists(item.getId()) : false;
+		return (item != null) ? repository.existsById(item.getId()) : false;
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public class TodoServiceImpl implements TodoService {
 	@Override
 	public void deleteItem(int id) {
 		if (id >= 0)
-			repository.delete(id);
+			repository.deleteById(id);
 	}
 
 	@Override
