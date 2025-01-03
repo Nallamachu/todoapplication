@@ -47,8 +47,10 @@ public class WebSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/login-form", "/users/create", "/error").permitAll()
+                .antMatchers("/login-form", "/users/create", "/error","/h2-console","/h2-console/**").permitAll()
                 .anyRequest().authenticated()
+                .and()
+                .headers().frameOptions().sameOrigin()
                 .and()
                 .formLogin()
                 .loginPage("/login-form")
@@ -62,6 +64,7 @@ public class WebSecurityConfig {
                 .and()
                 .exceptionHandling()
                 .accessDeniedHandler(accessDeniedHandler());
+
         return http.build();
     }
 
